@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amrita Login Page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        /* Header */
+        .header {
+            background-color: #0a1f44;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #123b73;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .nav button {
+            background: transparent;
+            border: none;
+            color: #e8eef7;
+            font-size: 16px;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        .nav button:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            margin: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Login Box */
+        .login-box {
+            background-color: white;
+            padding: 25px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            color: #0a1f44;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1f6feb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background-color: #174ea6;
+        }
+
+        /* Campus Details */
+        .campus-details {
+            background-color: white;
+            width: 500px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .campus-details h2 {
+            color: #0a1f44;
+        }
+
+        .campus-details img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        AMRITA VISWA VIDYAPEETHAM 
+    </div>
+
+    <div class="nav">
+        <button onclick="showCampus('coimbatore')">Coimbatore</button>
+        <button onclick="showCampus('amritapuri')">Amritapuri</button>
+        <button onclick="showCampus('bangalore')">Bangalore</button>
+        <button onclick="showCampus('chennai')">Chennai</button>
+        <button onclick="showCampus('amaravathi')">Amaravathi</button>
+        <button onclick="showCampus('nagercoil')">Nagercoil</button>
+        <button onclick="showCampus('kochi')">Kochi</button>
+        <button onclick="showCampus('mysore')">Mysore</button>
+    </div>
+
+    <div class="container">
+
+        <!-- Login Section -->
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button>Login</button>
+        </div>
+
+        <!-- Campus Info Section -->
+        <div class="campus-details" id="campusInfo">
+            <h2>About the Campus</h2>
+            <p>Select a campus from above to view details.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showCampus(campus) {
+            let info = document.getElementById("campusInfo");
+
+            if (campus === "coimbatore") {
+                info.innerHTML = `
+                <h2>Coimbatore Campus</h2>
+                <p>Located in Tamil Nadu. Known for engineering and technology programs.</p>
+                <img src="https://tse3.mm.bing.net/th/id/OIP.elkN6U_aVSlLuBTcPX2q_QHaEK?pid=Api">`;
+            }
+
+            else if (campus === "amritapuri") {
+                info.innerHTML = `
+                <h2>Amritapuri Campus</h2>
+                <p>Located in Kerala. Famous for arts, science, and research activities.</p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.jPuLxk4ALi6yUzvKevF7fgHaEM?pid=Api">`;
+            }
+
+            else if (campus === "bangalore") {
+                info.innerHTML = `
+                <h2>Bangalore Campus</h2>
+                <p>Located in Karnataka with strong industry exposure.</p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.AxDXEuEdONmn1Poym0qaiQHaDt?pid=Api">`;
+            }
+
+            else if (campus === "chennai") {
+                info.innerHTML = `
+                <h2>Chennai Campus</h2>
+                <p>Focused on innovation and engineering disciplines.</p>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.5Cd4ekgT1P_EX7zhzH_D1AHaDp?pid=Api">`;
+            }
+
+            else if (campus === "amaravathi") {
+                info.innerHTML = `
+                <h2>Amaravathi Campus</h2>
+                <p>Located in Andhra Pradesh with a peaceful academic environment.</p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.WIKj0_HGLKy7-vepQuwuLwHaDK?pid=Api">`;
+            }
+            else if (campus === "nagercoil") {
+        info.innerHTML =  `
+        <h2>Nagercoli Campus</h2>
+        <p>Amrita Vishwa Vidyapeetham’s campus, situated in Erachakulam, Nagercoil, is a beacon of educational excellence dedicated to providing holistic education.</p>
+        <img src="https://th.bing.com/th/id/OIP.tHI3_GmtWa09kMGJD3cyRgHaDK?w=339&h=149&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">`;
+    }
+
+    else if (campus === "kochi") {
+        info.innerHTML = `
+        <h2>kochi campus</h2>
+        <p>Amrita Vishwa Vidyapeetham has an extensive campus being set up at Kochi that comprises of a pre-eminent medical institute, the Amrita Institute of Medical Sciences (AIMS)</p>
+        <img src="https://webfiles.amrita.edu/2019/06/EXepuCDM-New-Project-11.jpg">`;
+    }
+
+    else if (campus === "mysore") {
+        info.innerHTML = `
+        <h2>Mysore campus</h2>
+        <p>Located in the heritage city of Mysuru, the campus offers a focused academic environment supported by the academic framework, research ecosystem, and institutional standards of Amrita University. .</p>
+        <img src="https://image-static.collegedunia.com/public/college_data/images/campusimage/1473420754campu.PNG">`;
+    }
+        }
+    </script>
+
+</body>
+</html>

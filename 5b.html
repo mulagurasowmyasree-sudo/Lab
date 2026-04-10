@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Learning Hub</title>
+
+     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f6f8;
+        }
+
+        /* LEFT SIDE NAVIGATION */
+        .sidebar {
+            width: 200px;
+            background-color: #2c3e50;   /* professional dark */
+            padding-top: 40px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 14px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover {
+            background-color: #3a4a5a;
+        }
+
+        /* RIGHT CONTENT */
+        .main {
+            flex: 1;
+        }
+
+        .header {
+            background-color: #34495e;
+            color: #ffffff;
+            text-align: center;
+            padding: 35px;
+            font-size: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 120px);
+            border: none;
+            background-color: #ffffff;
+        }
+    </style>
+    <script>
+        function loadPage(page) {
+            let frame = document.getElementById("frame");
+
+            if (page === 'home') {
+                frame.srcdoc = `
+                <body bgcolor="lightblue" align="center">
+                    <h2>Welcome to Student Learning Hub</h2>
+                    <p>This platform helps students learn and grow.</p>
+                </body>`;
+            }
+
+            if (page === 'about') {
+                frame.srcdoc = `
+                <body bgcolor="#eef3f8" align="center">
+                    <h2>About Us</h2>
+                    <p>This mini website is created for student learning.</p>
+                </body>`;
+            }
+
+            if (page === 'contact') {
+                frame.srcdoc = `
+                <body bgcolor="lightyellow" align="center">
+                    <h2>Contact Us</h2>
+                    <p>Email: studenthub@gmail.com<br>Phone: 9876543210</p>
+                </body>`;
+            }
+        }
+    </script>
+</head>
+
+<body onload="loadPage('home')">
+    <!-- LEFT VERTICAL MENU -->
+    <div class="sidebar">
+        <a onclick="loadPage('home')">Home</a>
+        <a onclick="loadPage('about')">About</a>
+        <a onclick="loadPage('contact')">Contact</a>
+    </div>
+    <!-- RIGHT CONTENT -->
+    <div class="main">
+        <div class="header">
+            Student Learning Hub
+        </div>
+
+        <iframe id="frame"></iframe>
+    </div>
+
+    
+
+</body>
+</html>

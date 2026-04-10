@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rotating Square</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: rgb(247, 251, 253);
+    }
+
+    @keyframes rotatesquare {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      background: rgb(74, 10, 158);
+      border: 2px solid black;
+      border-radius: 8px;
+      animation: rotatesquare 2s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="square"></div>
+</body>
+</html>
