@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Average Marks</title>
+</head>
+
+<body>
+
+<h2>Enter 6 Subject Marks (comma separated)</h2>
+
+<input type="text" id="marks" placeholder="e.g. 70,80,65,90,75,85">
+
+<br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function calculate() {
+
+    // Read marks from input box
+    let input = document.getElementById("marks").value;
+
+    // Convert input into array
+    let arr = input.split(",");
+
+    let sum = 0;
+
+    // Calculate total marks
+    for (let i = 0; i < arr.length; i++) {
+        sum += parseFloat(arr[i]);
+    }
+
+    // Find average
+    let avg = sum / arr.length;
+
+    // Display average
+    document.getElementById("result").innerHTML =
+        "Average: " + avg.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>
