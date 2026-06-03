@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Email Validation</title>
+</head>
+
+<body>
+
+<h2>Email Validation Form</h2>
+
+<input type="text" id="email" placeholder="Enter Gmail">
+
+<br><br>
+
+<button onclick="validateEmail()">Check</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function validateEmail() {
+
+    let email = document.getElementById("email").value;
+
+    // Gmail validation pattern
+    let pattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    if (pattern.test(email)) {
+
+        document.getElementById("result").innerHTML =
+            "Gmail is Valid";
+
+    } else {
+
+        document.getElementById("result").innerHTML =
+            "Gmail is Invalid";
+    }
+}
+
+</script>
+
+</body>
+</html>

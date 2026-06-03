@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form Validation</title>
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name">
+    <br><br>
+
+    Email:
+    <input type="text" id="email">
+    <br><br>
+
+    Password:
+    <input type="password" id="password">
+    <br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+<h3 id="result"></h3>
+
+<script>
+
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    // Email pattern
+    let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+
+    // Name validation
+    if (name == "") {
+        document.getElementById("result").innerHTML =
+            "Name cannot be empty";
+        return false;
+    }
+
+    // Email validation
+    if (!pattern.test(email)) {
+        document.getElementById("result").innerHTML =
+            "Invalid Email Format";
+        return false;
+    }
+
+    // Password validation
+    if (password == "") {
+        document.getElementById("result").innerHTML =
+            "Password cannot be empty";
+        return false;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Registration Successful";
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>
