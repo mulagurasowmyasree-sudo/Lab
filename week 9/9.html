@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 9 Programs</title>
+    <style>
+        
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f2f2f2;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 600px;
+            height:100px;
+            justify-content: center;
+            padding:200px;
+            
+            margin-top: 200px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            background: teal;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #output {
+            margin-top: 15px;
+            padding: 10px;
+            background: #e6f7ff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>Number Programs</h3>
+
+    <input type="number" id="num" placeholder="Enter number"><br><br>
+
+    <button onclick="evenOdd()">Even / Odd</button>
+    <button onclick="prime()">Prime</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="armstrong()">Armstrong</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+function getNum() {
+    return parseInt(document.getElementById("num").value);
+}
+
+function evenOdd() {
+    let n = getNum();
+    document.getElementById("output").innerHTML =
+        (n % 2 === 0) ? "Even Number" : "Odd Number";
+}
+
+function prime() {
+    let n = getNum(), flag = true;
+    if (n <= 1) flag = false;
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            flag = false;
+            break;
+        }
+    }
+    document.getElementById("output").innerHTML =
+        flag ? "Prime Number" : "Not Prime";
+}
+
+function factorial() {
+    let n = getNum(), fact = 1;
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    if(n<0){
+        document.getElementById("output").innerHTML="invalid number";
+        return;
+    }
+    document.getElementById("output").innerHTML =
+        "Factorial = " + fact;
+}
+
+function armstrong() {
+    let n = getNum(), sum = 0, temp = n;
+    while (temp > 0) {
+        let d = temp % 10;
+        sum += d * d * d;
+        temp = Math.floor(temp / 10);
+    }
+    document.getElementById("output").innerHTML =
+        (sum === n) ? "Armstrong Number" : "Not Armstrong";
+}
+</script>
+
+</body>
+</html>
